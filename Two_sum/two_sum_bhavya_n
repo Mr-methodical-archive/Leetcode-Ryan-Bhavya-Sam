@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> seen;
+        for (int i = 0; i < nums.size(); i++) {
+            int target2 = target - nums[i];
+            if (seen.count(target2) > 0) {
+                return {seen[target2], i};
+            }
+            seen[nums[i]] = i;
+        }
+        return {0, 1};
+    }
+};
