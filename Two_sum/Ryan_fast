@@ -1,0 +1,16 @@
+class Solution {
+public: // & at the end is just pass by reference and none would be pass by value
+    vector<int> twoSum(vector<int>& nums, int target) { // array is returned
+        // unordered_map is a hash table
+        unordered_map<int, int> seen;
+        for (int i = 0; i < nums.size(); ++i) {
+            // we need to map to index
+            if (seen.count(target - nums[i])) { 
+                return {seen[target - nums[i]], i};
+            } else {
+                seen[nums[i]] = i; 
+            }
+        }
+        return {0, 1};
+    }
+};
