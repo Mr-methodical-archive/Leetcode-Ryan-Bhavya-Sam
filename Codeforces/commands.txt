@@ -1,0 +1,7 @@
+// To compile:
+g++ problemA.cpp -o problemA -std=c++20 -Wall
+
+// to run:
+./problemA
+
+// I can also use ./problemA < in.txt to redirect input to the file
